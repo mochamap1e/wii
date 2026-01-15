@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "RodinNTLG";
+    src: url("RodinNTLG.woff2") format("woff2");
+}
+
+body {
+    display: flex;
+    font-family: "RodinNTLG";
+    margin: 0;
+}
