@@ -11,7 +11,7 @@ export default function Boot() {
     const clicked = useRef(false);
 
     useEffect(() => {
-        const click = new Howl({ src: "sfx/click.wav" });
+        const click = new Howl({ src: "/sfx/click.wav", preload: true });
 
         function onClick() {
             if (!clicked.current) {
@@ -21,7 +21,7 @@ export default function Boot() {
 
                 gsap.to("#boot", { opacity: 0 });
 
-                setTimeout(() => navigate("/home", { replace: true }), 1000);
+                setTimeout(() => navigate("/home", { replace: true }), 2000);
             }
         }
 
