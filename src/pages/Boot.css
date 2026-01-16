@@ -1,12 +1,39 @@
+/* ids */
+
 #boot {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     width: 100vw;
     height: 100vh;
 
-    color: white;
+    gap: 40px;
+}
+
+#boot-bg {
     background-color: black;
+    color: white;
+}
+
+#boot-warning {
+    display: flex;
+    gap: 5px;
+}
+
+#boot-warning img {
+    width: 40px;
+}
+
+#boot-health-safety {
+    color: #85a3d8;
+}
+
+#boot-continue {
+    opacity: 0;
+}
+
+/* classes */
+
+.boot-section {
+    align-items: center;
 }

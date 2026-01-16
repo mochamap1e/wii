@@ -1,10 +1,40 @@
+/* fonts */
+
 @font-face {
-    font-family: "RodinNTLG";
-    src: url("RodinNTLG.woff2") format("woff2");
+    font-family: "RodinNTLG-Light";
+    src: url("/fonts/RodinNTLG-Light.woff2") format("woff2");
 }
+
+@font-face {
+    font-family: "RodinNTLG-Medium";
+    src: url("/fonts/RodinNTLG-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "RodinNTLG-Bold";
+    src: url("/fonts/RodinNTLG-Bold.woff2") format("woff2");
+}
+
+/* tags */
 
 body {
     display: flex;
-    font-family: "RodinNTLG";
+    font-family: "RodinNTLG-Medium";
     margin: 0;
+}
+
+h1 {
+    font-family: "RodinNTLG-Bold";
+}
+
+h1, h2, h3 {
+    margin: 0;
+    user-select: none;
+}
+
+/* classes */
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
