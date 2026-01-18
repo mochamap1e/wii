@@ -7,6 +7,28 @@ export default function Home() {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
 
+    // boot
+    useEffect(() => {
+        const music = new Howl({ src: "/sound/music.ogg", preload: true, loop: true });
+        const boot = new Howl({ src: "/sound/boot.wav", preload: true });
+
+        let musicTimeout;
+        const bootTimeout = setTimeout(() => {
+            boot.play();
+            musicTimeout = setTimeout(() => {
+                music.play();
+                music.fade(0, 1, 2000);
+            }, 1500);
+        }, 1000);
+
+        return () => {
+            music.stop();
+            boot.stop();
+            clearTimeout(musicTimeout);
+            clearTimeout(bootTimeout);
+        }
+    }, []);
+
     // date and time
     useEffect(() => {
         function updateDate() {
@@ -23,15 +45,6 @@ export default function Home() {
         const interval = setInterval(updateDate, 1000);
 
         return () => clearInterval(interval);
-    }, []);
-
-    // boot anim
-    useEffect(() => {
-        const boot = new Howl({ src: "/sfx/boot.wav", preload: true });
-
-        setTimeout(() => {
-            boot.play();
-        }, 1000);
     }, []);
 
     return (

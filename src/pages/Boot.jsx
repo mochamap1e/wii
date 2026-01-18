@@ -11,7 +11,7 @@ export default function Boot() {
     const clicked = useRef(false);
 
     useEffect(() => {
-        const click = new Howl({ src: "/sfx/click.wav", preload: true });
+        const click = new Howl({ src: "/sound/click.wav", preload: true });
 
         function onClick() {
             if (!clicked.current) {
