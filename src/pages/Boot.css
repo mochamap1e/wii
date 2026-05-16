@@ -3,16 +3,7 @@
 #boot {
     align-items: center;
     justify-content: center;
-
-    width: 100vw;
-    height: 100vh;
-
     gap: 40px;
-}
-
-#boot-bg {
-    color: white;
-    background-color: black;
 }
 
 #boot-warning {

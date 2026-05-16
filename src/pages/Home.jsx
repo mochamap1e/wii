@@ -16,7 +16,7 @@ export default function Home() {
         const bootTimeout = setTimeout(() => {
             boot.play();
             musicTimeout = setTimeout(() => {
-                music.play();
+                // music.play();
                 music.fade(0, 1, 2000);
             }, 1500);
         }, 1000);
@@ -31,6 +31,8 @@ export default function Home() {
 
     // date and time
     useEffect(() => {
+        let colonVisible = false;
+
         function updateDate() {
             const date = new Date();
 
@@ -38,8 +40,15 @@ export default function Home() {
             const month = date.getMonth() + 1;
             const day = date.getDate();
 
-            setDate(`${weekday} ${month}/${day}`);
-            setTime(date.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: true }));
+            const dateString = `${weekday} ${month}/${day}`;
+            let timeString = date.toLocaleTimeString([], { hour: "numeric", minute: "numeric", hour12: true });
+
+            colonVisible = !colonVisible;
+
+            if (!colonVisible) timeString = timeString.replace(":", " ");
+
+            setDate(dateString);
+            setTime(timeString);
         }
 
         const interval = setInterval(updateDate, 1000);
@@ -48,7 +57,7 @@ export default function Home() {
     }, []);
 
     return (
-        <div id="home-bg">
+        <div id="home">
             <h1>Home</h1>
             <h1>{date}</h1>
             <h2>{time}</h2>

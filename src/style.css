@@ -19,7 +19,12 @@
 
 body {
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: "RodinNTLG-Medium";
+    color: white;
+    background-color: black;
+    height: 100vh;
     margin: 0;
 }
 

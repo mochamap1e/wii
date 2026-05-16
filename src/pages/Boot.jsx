@@ -21,7 +21,7 @@ export default function Boot() {
 
                 gsap.to("#boot", { opacity: 0 });
 
-                setTimeout(() => navigate("/home", { replace: true }), 2000);
+                setTimeout(() => navigate("/home"), 2000);
             }
         }
 
@@ -36,26 +36,24 @@ export default function Boot() {
     }, []);
     
     return (
-        <div id="boot-bg">
-            <div id="boot" className="flex-column">
-                <h1 id="boot-warning">
-                    <img src="/icons/warning.svg"/>
-                    WARNING-HEALTH AND SAFETY
-                </h1>
+        <div id="boot" className="flex-column">
+            <h1 id="boot-warning">
+                <img src="/icons/warning.svg"/>
+                WARNING-HEALTH AND SAFETY
+            </h1>
 
-                <div className="boot-section flex-column">
-                    <h2>BEFORE PLAYING, READ YOUR OPERATIONS</h2>
-                    <h2>MANUAL FOR IMPORTANT INFORMATION</h2>
-                    <h2>ABOUT YOUR HEALTH AND SAFETY.</h2>
-                </div>
-
-                <div className="boot-section flex-column">
-                    <h3>Also online at</h3>
-                    <h2 id="boot-health-safety">www.nintendo.com/healthsafety/</h2>
-                </div>
-
-                <h1 id="boot-continue">Click to continue.</h1>
+            <div className="boot-section flex-column">
+                <h2>BEFORE PLAYING, READ YOUR OPERATIONS</h2>
+                <h2>MANUAL FOR IMPORTANT INFORMATION</h2>
+                <h2>ABOUT YOUR HEALTH AND SAFETY.</h2>
             </div>
+
+            <div className="boot-section flex-column">
+                <h3>Also online at</h3>
+                <h2 id="boot-health-safety">www.nintendo.com/healthsafety/</h2>
+            </div>
+
+            <h1 id="boot-continue">Click to continue.</h1>
         </div>
     )
 }
